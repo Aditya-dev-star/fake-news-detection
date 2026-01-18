@@ -40,22 +40,26 @@ It supports:
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+```text
 fake-news-detection/
 │
-├── app.py # Flask application
-├── requirements.txt # Python dependencies
-├── README.md # Project documentation
+├── app.py                 # Flask application entry point
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
 │
 ├── src/
-│ ├── train.py # Model training script
-│ ├── predict.py # Prediction logic
-│ ├── preprocess.py # Text preprocessing
+│   ├── train.py           # Model training script
+│   ├── predict.py         # Prediction logic
+│   └── preprocess.py     # Text preprocessing utilities
 │
 ├── templates/
-│ └── index.html # Frontend UI
+│   └── index.html         # Frontend UI (Flask template)
 │
 ├── static/
-│ ├── style.css # Styling
-│ └── hero.png # Background image
+│   ├── style.css          # CSS styling
+│   └── hero.png           # Background image
+
 
 
