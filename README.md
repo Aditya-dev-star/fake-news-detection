@@ -40,8 +40,6 @@ It supports:
 
 ## 📁 Project Structure
 
-## 📁 Project Structure
-
 fake-news-detection/
 │
 ├── app.py                 # Flask application entry point
