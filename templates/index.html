@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>📰 Fake News Detection</h1>
+        <p>AI-powered real-time linguistic analysis of news</p>
+    </div>
+
+    <!-- ANALYZE CARD -->
+    <div class="card">
+        <form method="POST">
+            <textarea name="news" placeholder="Paste full news (headline + content recommended)"></textarea>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if result %}
+        <div class="result
+        {% if result[0] == 'REAL 📰' %}real-glow
+        {% elif result[0] == 'FAKE 🚫' %}fake-glow
+        {% else %}uncertain-glow{% endif %}">
+            <h3>
+                Prediction:
+                <span class="badge
+                {% if result[0] == 'REAL 📰' %}real
+                {% elif result[0] == 'FAKE 🚫' %}fake
+                {% else %}uncertain{% endif %}">
+                {{ result[0] }}
+                </span>
+            </h3>
+
+            <p>Confidence: {{ result[1] }}%</p>
+
+            <div class="progress">
+                <div class="progress-bar" style="width: {{ result[1] }}%"></div>
+            </div>
+
+            <p style="margin-top:10px;color:#ffcc00;">
+                ⚠️ Based on linguistic patterns, not factual verification
+            </p>
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- SEARCH NEWS -->
+    <div class="card" style="margin-top:30px;">
+        <h3 style="margin-bottom:10px;">🔍 Search Live News</h3>
+
+        <form method="POST">
+            <input type="text" name="query"
+                   placeholder="Search topic (e.g. Trump tariff, AI regulation)"
+                   style="width:100%;padding:12px;border-radius:8px;
+                   background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);
+                   color:white;">
+            <button type="submit">Search</button>
+        </form>
+
+        {% for text, label, confidence in searched_news %}
+        <div class="news-card">
+            <p>{{ text }}</p>
+            <strong>{{ label }}</strong> ({{ confidence }}%)
+        </div>
+        {% endfor %}
+    </div>
+
+    <footer>
+        Built with ❤️ using Machine Learning & NLP
+    </footer>
+
+</div>
+
+</body>
+</html>
+
+
+

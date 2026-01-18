@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+
+# ML models
+model/*.pkl
+
+# Secrets
+.env
+
+# OS
+.DS_Store
+
