@@ -38,8 +38,12 @@ It supports:
 
 ---
 
+
+
+
 ## 📁 Project Structure
 
+```text
 fake-news-detection/
 │
 ├── app.py                 # Flask application entry point
@@ -57,6 +61,7 @@ fake-news-detection/
 ├── static/
 │   ├── style.css          # CSS styling
 │   └── hero.png           # Background image
+
 
 
 
